@@ -1,0 +1,11 @@
+BEGIN:VCARD
+VERSION:3.0
+FN:Parker M
+N:;Parker ;Medlin;;
+item1.EMAIL;TYPE=INTERNET:me@parkermedl.in
+item1.X-ABLabel:
+item2.TEL:(980) 621-1595
+item2.X-ABLabel:
+ROLE:Strange Camels
+CATEGORIES:Intergroup Email List,myContacts
+END:VCARD
