@@ -85,7 +85,9 @@
         background(75);
         for (let i = 0; i <= height; i++) {
             let inter = map(i, 0, height, 0, 1);
-            let c = lerpColor(color(255, 110, 255), color(251, 255, 110), inter);
+            // pink to yellow:
+            // let c = lerpColor(color(255, 110, 255), color(251, 255, 110), inter);
+            let c = lerpColor(color(0,0,0), color(255, 255, 255), inter);
             stroke(c);
             line(0, i, width, i);
         }
@@ -113,7 +115,7 @@
       let xLineOffset = time;
       for (var x = 0; x < width; x++) {
           stroke(255);
-          var y = map(noise(xLineOffset), 0, 1, 0, height);
+          var y = map(noise(xLineOffset), 0, 1, 0, height/2);
           vertex(x, y);
           xLineOffset += scale;
       }
@@ -183,6 +185,8 @@
         let choices = [lightRed,lightRed,lightPink,
                         lightPurple,lightBlue,lightTeal,
                         lightGreen,lightYellow,lightOrange]
+
+        
         
         return choices[Math.round(random(1)*10,0)]
     }

@@ -19,6 +19,7 @@ header h1 {
     color: white;
     padding-left: 10px;
     padding-bottom: 10px;
+    font-size: 8vw;
 }
 
 a {
@@ -62,6 +63,7 @@ h2 {
     color: white;
     text-align: center;
     margin-top: 20px;
+    font-size: 6vw;
 }
 
 ul {
@@ -109,6 +111,7 @@ ul {
     justify-content: space-around;
     align-items: center;
     background-color: white;
+    font-size: 4vw;
 }
 
 .promocodep {
@@ -116,13 +119,13 @@ ul {
     padding-top: 0px;
     margin-bottom: 0px;
     padding-bottom: 0px;
-    font-size: 1vw;
+    font-size: 2vw;
 }
 
 .actualcodep {
     margin-top: 0px;
     padding-top: 0px;
-    font-size: 1vw;
+    font-size: 1.5vw;
 }
 
 .linkText {
@@ -139,7 +142,7 @@ ul {
 .contactCardButton {
     height: 30px;
     width: auto;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(174, 174, 174);
     border-radius: 5px;
     border: rgb(0, 0, 0) solid 2px;
     color: rgb(0, 0, 0);
