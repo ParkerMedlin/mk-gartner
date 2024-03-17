@@ -5,10 +5,13 @@
       <link rel="stylesheet" type="text/css" href="static/css/styles.css">
       <link rel="icon" type="image/x-icon" href="static/media/MKG_favicon.ico">
   </head>
-  <body style='background-image: url("static/media/bw_trippp.png")'>
+  <!-- <body style='background-image: url("static/media/bw_trippp.png")'> -->
+  <body>
+    <canvas id="myCanvas" style="position: absolute; top: 0; left: 0; z-index: -1;"></canvas>
+    <!-- <div id="canvasContainer container" style="position: absolute; top: 0; left: 0; z-index: -1;"> -->
     <div class="container">
       <header class="mainHeader">
-        <h1 id="typedText"></h1>
+        <h1 id="typedText">oi oi oiiiiiiii</h1>
       </header>
     
       <!-- <section id="contactCard" class="fadeIn" style="display: none;">
@@ -20,9 +23,9 @@
           <div class="headerDiv"><h2>Links</h2></div>
 
           <ul class="linkList">
-            <a class="listLink" href="https://www.youtube.com/watch?v=2-qtJifs44M">
-              <div class="listLinkItem linkListLogo"><img class="logoImage" src="static/media/logos/youtubeLogo.png"></div>
-              <div class="listLinkItem"><p>A/V set<br>6-26-2023</p></div>
+            <a class="listLink" href="https://www.eventbrite.com/e/awakenus-bloom-a-music-movement-art-festival-in-talladega-alabama-tickets-758242883877">
+              <div class="listLinkItem linkListLogo"><img class="logoImage" src="static/media/logos/awqakenusbloom.png"></div>
+              <div class="listLinkItem bigBoi"><p class="linkText">AWAKENUS BLOOM</p><p class="promocodep">promo code<em class="pulse">(!!)</em>:</p><p class="actualcodep">awakenusbloom-mkgartner</p></div>
               <div class="listLinkItem"><p> </p></div>
             </a>
             <a class="listLink" href="https://soundcloud.com/mkgartner">
@@ -54,4 +57,132 @@
     </div>
   </body>
   <script src="static/js/typewriter.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+  <script>
+    let canvas;
+
+    function setup() {
+      canvas = createCanvas(windowWidth, windowHeight * 1.5);
+      canvas.position(0, 0);
+      canvas.style('z-index', '-1'); // Ensure the canvas is behind other content
+      // Other setup code...
+    }
+
+    function windowResized() {
+      resizeCanvas(windowWidth, windowHeight * 1.5);
+    } 
+
+    //let xOffset = 0;
+    //let yOffset = 10000;
+    let noiseValues = [];
+    let flash = false;
+    let speed = .001;
+    let scale = .001;
+    let time = 0;
+    function draw() {
+        background(75);
+        for (let i = 0; i <= height; i++) {
+            let inter = map(i, 0, height, 0, 1);
+            let c = lerpColor(color(255, 110, 255), color(251, 255, 110), inter);
+            stroke(c);
+            line(0, i, width, i);
+        }
+        //fill(255, 0, 0);
+        //let xPosition = map(noise((xOffset)), 0, 1, 0, width);
+        //let yPosition = map(noise((yOffset)), 0, 1, 0, height);
+        //xOffset += .01;
+        //yOffset += .01;
+        //ellipse(xPosition, yPosition , 10, 10 );
+
+        noFill();
+        drawWave(time);
+        drawWave(time+1);
+        drawWave(time+2);
+        drawWave(time+3);
+        drawWave(time+4);
+        drawWave(time+5);
+        drawWave(time+6);
+        time += speed;
+        // updateNoiseValuesDisplay();
+    }
+
+    function drawWave(time) {
+      beginShape();
+      let xLineOffset = time;
+      for (var x = 0; x < width; x++) {
+          stroke(255);
+          var y = map(noise(xLineOffset), 0, 1, 0, height);
+          vertex(x, y);
+          xLineOffset += scale;
+      }
+      strokeWeight(2);
+      // The following line has been removed to prevent the erroneous vertex from being created.
+      // vertex(height/2, max(map(noise(xLineOffset), 0, 1, 0, height) - height), height * 5);
+      
+      if (flash) {
+          fill(map(random(1), 0, 1, 0, 255), 150);
+      } else {
+          fill(110, 255, 246, 150);
+      }
+      endShape(CLOSE);
+    }
+
+    // THIS IS FOR IF YOU WANT THE DRAWER LINES 
+    // function drawWave(time){
+    //     beginShape();
+    //     let xLineOffset = time;
+    //     for (var x = 0; x < width; x++) {
+    //         stroke(255);
+    //         var y = map(noise(xLineOffset),0,1,0,height);
+    //         vertex(x, y);
+    //         if (noiseValues.length >= 50) {
+    //             noiseValues.shift(); // Remove the oldest value if we have 50 values
+    //         }
+    //         noiseValues.push(y); // Add the new value
+    //         xLineOffset += scale;
+    //     };
+    //     strokeWeight(2);
+    //     vertex(height/2,max(map(noise(xLineOffset),0,1,0,height)-height),height*5);
+        
+    //     // vertex(0,height);
+    //     // let colorValues = getColor();
+    //     // fill(colorValues[0], colorValues[1], colorValues[2], 150);
+    //     if (flash){
+    //         fill(map(random(1),0,1,0,255), 150);
+    //     } else {
+    //         fill(110, 255, 246, 150);
+    //     }
+
+        
+    //     endShape(CLOSE);
+    // }
+
+    // THIS IS FOR IF YOU WANT THE VALUES DISPLAYED ON PAGE
+    // function updateNoiseValuesDisplay() {
+    //     let list = document.getElementById('noiseList');
+    //     list.innerHTML = ''; // Clear the current list
+    //     noiseValues.forEach(value => {
+    //         let listItem = document.createElement('li');
+    //         listItem.textContent = value.toFixed(2); // Format the value to 2 decimal places
+    //         list.appendChild(listItem);
+    //     });
+    // }
+
+    function getColor(){
+        let lightRed = [255, 110, 110];
+        let lightPink = [255, 110, 255];
+        let lightPurple = [207, 110, 255];
+        let lightBlue = [110, 163, 255];
+        let lightTeal = [110, 255, 246];
+        let lightGreen = [114, 255, 110];
+        let lightYellow = [251, 255, 110];
+        let lightOrange = [255, 183, 110];
+
+        let choices = [lightRed,lightRed,lightPink,
+                        lightPurple,lightBlue,lightTeal,
+                        lightGreen,lightYellow,lightOrange]
+        
+        return choices[Math.round(random(1)*10,0)]
+    }
+  </script>
 </html>

@@ -5,7 +5,7 @@ body {
 header {
     padding: 10px;
     text-align: center;
-    width: 80vw;
+    width: 60vw;
     display: inline-block;
     justify-content: center;
     margin-bottom: 20px;
@@ -43,20 +43,25 @@ a {
 
 section {
     padding: 20px;
-    background-color: #c0bebe;
+    background-color: rgba(255, 255, 255, 0.5); /* Adjust the RGB values to match your color */
     margin-bottom: 20px;
-    width: 85vw;
+    width: 65vw;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     padding-bottom: 40px;
+    
+}
+
+section > * {
+    opacity: 1.0;
 }
 
 h2 {
     font-size: 65px;
     background-color: #383838;
-    width: 80vw;
+    width: 60vw;
     color: white;
     text-align: center;
     margin-top: 20px;
@@ -74,6 +79,26 @@ ul {
     padding-bottom: 20px;
 }
 
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.pulse {
+    animation: pulse 1s infinite ease-in-out;
+}
+
 .listLink {
     border: rgb(0, 0, 0) solid 2px;
     flex-grow: 1;
@@ -89,13 +114,30 @@ ul {
     background-color: white;
 }
 
+.promocodep {
+    font-size: 28px;
+    margin-top: 0px;
+    padding-top: 0px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+
+.actualcodep {
+    font-size: 22px;
+    margin-top: 0px;
+    padding-top: 0px;
+}
+
+.linkText {
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+
 .listLinkItem {
     width: 33%;
     text-align: center;
     vertical-align: middle;
 }
-
-
 
 .contactCardButton {
     height: 30px;
@@ -111,7 +153,7 @@ ul {
     float: left;
 }
 
-.fadeIn {
+/* .fadeIn {
     opacity: 0;
     transform: translateY(50px);
     transition: all 1s ease-in-out;
@@ -120,7 +162,7 @@ ul {
 .show {
     opacity: 1;
     transform: translateY(0);
-}
+} */
 
 .logoImage {
     height: 75px;

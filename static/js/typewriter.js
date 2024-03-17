@@ -44,13 +44,13 @@ function typewriter()
 
 
 window.onload = function(){
-    typewriter();
+    // typewriter();
     setTimeout(function() {
         document.querySelectorAll('.fadeIn').forEach(function(element){
             element.classList.add('show');
     });
-    }, 2000);
-    setTimeout(function() {
-        document.getElementById('downloadLink').click();
-    }, 4000);
+    }, 1);
+    // setTimeout(function() {
+    //     document.getElementById('downloadLink').click();
+    // }, 4000);
 };
