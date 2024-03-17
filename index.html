@@ -4,6 +4,7 @@
       <title>MK Gartner</title>
       <link rel="stylesheet" type="text/css" href="static/css/styles.css">
       <link rel="icon" type="image/x-icon" href="static/media/MKG_favicon.ico">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <!-- <body style='background-image: url("static/media/bw_trippp.png")'> -->
   <body>
@@ -62,15 +63,16 @@
     let canvas;
 
     function setup() {
-      canvas = createCanvas(windowWidth, windowHeight * 1.5);
+      canvas = createCanvas(windowWidth, windowHeight);
+      canvas.style('display', 'block'); // This ensures the canvas does not have scrollbars
       canvas.position(0, 0);
-      canvas.style('z-index', '-1'); // Ensure the canvas is behind other content
+      canvas.style('z-index', '-1');
       // Other setup code...
     }
 
-    function windowResized() {
-      resizeCanvas(windowWidth, windowHeight * 1.5);
-    } 
+  function windowResized() {
+    resizeCanvas(windowWidth, windowHeight);
+  }
 
     //let xOffset = 0;
     //let yOffset = 10000;
