@@ -12,7 +12,7 @@
     <!-- <div id="canvasContainer container" style="position: absolute; top: 0; left: 0; z-index: -1;"> -->
     <div class="container">
       <header class="mainHeader">
-        <h1 id="typedText">oi oi oiiiiiiii</h1>
+        <h1 id="typedText">oi oi oiiiiii</h1>
       </header>
     
       <!-- <section id="contactCard" class="fadeIn" style="display: none;">
@@ -63,7 +63,7 @@
     let canvas;
 
     function setup() {
-      canvas = createCanvas(windowWidth, windowHeight);
+      canvas = createCanvas(windowWidth, windowHeight * 1.5);
       canvas.style('display', 'block'); // This ensures the canvas does not have scrollbars
       canvas.position(0, 0);
       canvas.style('z-index', '-1');
@@ -71,7 +71,7 @@
     }
 
   function windowResized() {
-    resizeCanvas(windowWidth, windowHeight);
+    resizeCanvas(windowWidth, windowHeight * 1.5);
   }
 
     //let xOffset = 0;
