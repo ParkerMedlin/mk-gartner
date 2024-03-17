@@ -13,7 +13,6 @@ header {
 }
 
 header h1 {
-    font-size: 90px;
     margin: 5px;
     background-color: #383838;
     text-align: left;
@@ -25,7 +24,6 @@ header h1 {
 a {
     margin-left: 10px;
     color: #333;
-    font-size: 36px;
 }
 
 #contactCard {
@@ -59,7 +57,6 @@ section > * {
 }
 
 h2 {
-    font-size: 65px;
     background-color: #383838;
     width: 60vw;
     color: white;
@@ -115,7 +112,6 @@ ul {
 }
 
 .promocodep {
-    font-size: 28px;
     margin-top: 0px;
     padding-top: 0px;
     margin-bottom: 0px;
@@ -123,7 +119,6 @@ ul {
 }
 
 .actualcodep {
-    font-size: 22px;
     margin-top: 0px;
     padding-top: 0px;
 }
