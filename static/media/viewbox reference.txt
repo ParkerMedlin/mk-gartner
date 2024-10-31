@@ -18,333 +18,169 @@ Once you add a viewBox to your <svg> (and editors like Inkscape and Illustrator 
 
 
 
-
+animated_border:
 in this video you're going to learn how
-0:01
 to create border animations in CSS and
-0:03
 the thing is to achieve this Behavior I
-0:05
 really had to write the weirdest CSS
-0:07
 code it uses very uncommon but pretty
-0:09
 cool CSS properties that you probably
-0:11
 never heard of my name is Fabian and
-0:13
 this is coding to go the channel where
-0:14
 you learn the most relevant coding
-0:16
 Concepts in just a few minutes and today
-0:18
 you will learn how to create these
-0:19
 border animations yourself to make
-0:20
 elements on your website stand out to
-0:23
 create an effect like this we cannot use
-0:24
 the Border property because it's just
-0:26
 not possible to add multiple fading
-0:28
 colors that move around the edge with a
-0:29
 glob effect on top of it instead like
-0:32
 always if something seems impossible we
-0:34
 have to go with a pseudo element on the
-0:36
 card that I want to animate I apply a
-0:38
 colon colon after element if youve seen
-0:41
 my tutorial on sud elements this part is
-0:42
 going to be a lot easier to understand
-0:45
 our after element has no content and
-0:47
 uses absolute positioning so we also
-0:49
 apply position relative on the card
-0:51
 itself to set the height and width of
-0:54
 the after element to
-0:57
 100% if we apply a red background color
-0:59
 we can our Pudo element which should be
-1:01
 the same size as the card itself now I
-1:04
 apply top and left 50% to Center the
-1:07
 element that will only Center the
-1:09
 element's origin which is the top left
-1:10
 corner so we need to translate it back
-1:13
 by 50% on the X and Y AIS this will push
-1:16
 it back by half its own size currently
-1:19
 this is covering the entire card so we
-1:21
 use a negative Z index to push it behind
-1:24
 the card and you probably guessed it
-1:26
 already this after element will now
-1:28
 serve as our border because any p ping
-1:30
 that we apply to this element will
-1:31
 basically control the thickness of the
-1:33
 border and since this is an entire
-1:35
 element and not just a border we can
-1:37
 apply all sorts of crazy CSS properties
-1:39
 to it for starters let's apply the same
-1:41
 border rges but instead of just using
-1:43
 the color red we can use the background
-1:46
 image to apply a conic
-1:49
 gradient to show you this better I will
-1:51
 put the element back in the foreground a
-1:54
 conic gradient is similar to a linear
-1:55
 gradient with the difference that it
-1:57
 goes clockwise it's basically like
-1:59
 looking at a cone from the top
-2:01
 perspective this gradient can receive
-2:03
 many different
-2:04
 colors as we can see the first and last
-2:07
 color have a pretty sharp cut in between
-2:09
 to smooth this out we can just repeat
-2:11
 the first color and then put it back at
-2:12
 the end then the line disappears and it
-2:15
 fades perfectly putting the element
-2:17
 behind our element reveals how this
-2:18
 could lead to our desired animation but
-2:20
 how can I get the glow effect to work
-2:22
 for that we have to duplicate this after
-2:24
 element by creating a before element
-2:26
 that looks exactly the same just use a
-2:28
 comma so that the style apply for both
-2:30
 the before and the after element now we
-2:33
 have two suit elements that are exactly
-2:35
 the same but for the before element I
-2:37
 will also apply filter blur to blur this
-2:40
 element by 1.5 RM and that will make it
-2:43
 Glow to improve this slightly we can
-2:45
 decrease the opacity with a value of 0.5
-2:48
 now the glowing is not too strong before
-2:50
 I show you how to animate these
-2:52
 gradients I also want to show you an
-2:53
 alternative which is this shining effect
-2:56
 where one or multiple colors move around
-2:58
 the edge for that we just have to use
-2:59
 different different colors I'm going to
-3:01
 use transparent and blue if you want to
-3:03
 control the length of the blue effect
-3:05
 then you can modify the size of the
-3:06
 transparent color by using percentages
-3:09
 like 50% transparent or 90% transparent
-3:12
 that will make the blue tail pretty
-3:13
 small and you can also have more
-3:14
 elements going around by just adding
-3:16
 more colors to the gradient now let's
-3:18
 see how we can animate this for that we
-3:20
 need to control the angle the angle is
-3:23
 the first parameter what we have to say
-3:25
 from
-3:26
 0° now turning this value up to 20°
-3:30
 50° 80° and so on we'll show you how
-3:33
 this animation would look later every
-3:35
 time I change this manually the Border
-3:37
 effect moves around and this is exactly
-3:39
 the value that we need to animate the
-3:41
 problem is it is not possible to animate
-3:43
 gradients if you ever try to transition
-3:45
 a button with a gradient on Hover then
-3:47
 you notice real quick that CSS doesn't
-3:49
 allow that but a workaround for that
-3:50
 would be to use custom properties also
-3:53
 known as CSS variables let's create a
-3:56
 variable D- angle 0° and the gradient we
-4:00
 can use the VAR function to assign this
-4:02
 variable as the angle that we want to
-4:04
 use D-
-4:06
 [Music]
-4:07
 Angle now we apply an animation 3
-4:10
 seconds we call it spin it should be
-4:13
 linear and play infinitely then I create
-4:16
 the spin animation using the add key
-4:19
 frames from this to that at the
-4:23
 beginning the angle variable will be at
-4:25
 0° and at the end it will be at 360°
-4:29
 which is just one full rotation so in
-4:31
 this key frames animation we are
-4:33
 constantly overwriting the angle
-4:34
 variable which is used up here to
-4:37
 control the angle of the conic radient
-4:39
 and this should make the animation work
-4:41
 but for some reason it's not working and
-4:43
 this is where really gets
-4:44
 complicated you see the problem is CSS
-4:47
 variables are normally not animatable
-4:49
 which means that animations won't be
-4:51
 applied to it but there is a new
-4:53
 experimental feature that can help us
-4:54
 out here I'm talking about the at
-4:56
 property rule which is a fancy way of
-4:58
 creating custom properties in CSS so
-5:00
 instead of using this variable here I
-5:03
 write add property-- angle here we have
-5:06
 to set up a few things first the syntax
-5:09
 is angle this controls the values this
-5:12
 variable can accept angle means it has
-5:14
 to be a number followed by degrees which
-5:16
 is just what we want if the syntax was
-5:18
 color for example then only colors like
-5:21
 RGB or hex are accepted next is the
-5:24
 initial value 0° that's just the default
-5:26
 value that we want to apply and inherits
-5:29
 is for
-5:30
 which is also just a default setting for
-5:32
 a custom property and now that we have
-5:34
 created the custom property that way it
-5:35
 will work perfectly and there you go our
-5:38
 border effect is animating perfectly if
-5:40
 you want a different effect just use
-5:42
 different colors this was coding to go
-5:44
 and if you learn something new today
-5:46
 subscribe to the channel and let me know
-5:47
 what video you want to see next you also
-5:49
 might want to check out this video right
-5:51
 here I will see you there
