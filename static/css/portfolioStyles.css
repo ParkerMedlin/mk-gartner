@@ -8,17 +8,18 @@
     left: 0;
     width: 100vw;
     background: black;
-    z-index: 999;
+    z-index: 100;
     /* border-bottom: 1px dashed rgb(255, 255, 255); */
 }
 
 .nav-content {
     position: relative;  
     background: black;  
-    z-index: 1;
+    z-index: 999;
     max-width: 100vw;
     margin: 0 auto;
     padding: 1rem 2rem;
+    z-index: 998;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -44,6 +45,11 @@
     animation: fadeIn 3s ease-in-out forwards;
 }
 
+.navbar::before {
+    filter: blur(.5rem);
+    opacity: 0.5;
+}
+
 
 @keyframes fadeIn {
     0% {
@@ -62,12 +68,6 @@
     to {
         --angle: -180deg;
     }
-}
-
-
-.navbar::before {
-    filter: blur(.5rem);
-    opacity: 0.5;
 }
 
 .nav-brand a {
@@ -130,7 +130,7 @@ body {
     height: 50%;
     position: fixed;
     top: 0;
-    z-index: 999;
+    z-index: 100;
 }
 
 @keyframes fillPath {
