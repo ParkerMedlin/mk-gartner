@@ -1,5 +1,5 @@
 .navbar {
-    font-family: 'Inter';
+    font-family: 'Pixelify Sans';
     font-style: thin;
     font-weight: 100;
     font-size: 12px;
@@ -127,7 +127,7 @@ body {
 #logo {
     /* background-color: gray; */
     width: 75%;
-    height: 8%;
+    height: 6.5%;
     /* height: 50%; */
     position: fixed;
     top: 0;
