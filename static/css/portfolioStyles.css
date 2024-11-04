@@ -1,8 +1,10 @@
 .navbar {
-    font-family: 'Pixelify Sans';
+    
+    font-family: 'Inter';
     font-style: thin;
     font-weight: 100;
-    font-size: 12px;
+    /* font-family: 'Pixelify Sans'; */
+    font-size: 18px; 
     position: fixed;
     top: 0;
     left: 0;
@@ -21,9 +23,25 @@
     padding: 1rem 2rem;
     z-index: 998;
     display: flex;
-    justify-content: center;
+    justify-content: center; 
     align-items: center;
 }
+
+.nav-links {
+    display: flex;
+    width: 25vw;
+    justify-content: space-between; /* Spread elements evenly */
+    align-items: center;
+    padding-left: 0px;
+    margin-left: 0px;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        width: 80vw;
+    }
+}
+
 
 @property  --angle {
     syntax: "<angle>";
@@ -78,10 +96,10 @@
 }
 
 .nav-links a {
-    margin-left: 2rem;
     text-decoration: none;
     color: #8e8e8e;
     transition: color 0.3s ease;
+    margin: 0px;
 }
 
 .nav-links a:hover {
@@ -97,21 +115,17 @@
     .nav-content {
         padding: 1rem;
     }
-    
-    .nav-links a {
-        margin-left: 1rem;
-    }
 }
 
 body {
     margin: 0;
     height: 100vh;
-    background: #0f0f0f;
-    overflow: hidden;
+    background: black;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    font-family: 'Arial', sans-serif;
+    flex-direction: column;
+    font-family: 'Pixelify Sans', sans-serif;
 }
 
 /* Add these new styles */
@@ -125,10 +139,8 @@ body {
 }
 
 #logo {
-    /* background-color: gray; */
     width: 75%;
     height: 6.5%;
-    /* height: 50%; */
     position: fixed;
     top: 0;
     margin-top: 75px;
@@ -153,7 +165,6 @@ body {
     }
 }
 
-
 @keyframes float {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-5px); }
@@ -162,4 +173,174 @@ body {
 @keyframes appear {
     0%, 100% { opacity: 0; transform: translateZ(0) rotateX(90deg); }
     20%, 80% { opacity: 1; transform: translateZ(100px) rotateX(0); }
+}
+
+.grid-container {
+    position: absolute;
+    top: 25vh;
+    width: 25vh;
+    height: 25vh;
+    display: grid;
+    grid-template-columns: repeat(2, 150px);
+    grid-template-rows: repeat(2, 150px);
+    gap: 20px;
+    padding: 20px;
+}
+
+.grid-container {
+    
+}
+
+.grid-item {
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    height: 100px;
+    width: 100px;
+}
+
+.portfolioImage {
+    width: 20vw; 
+    height: 20vh;
+}
+
+/* LINKS SECTION */
+#linksSectionContainer {
+    margin-top: 200vh;
+}
+
+#myCanvas {
+    position: fixed;  /* Force the canvas to submit to our positioning */
+    top: 0;
+    left: 0;
+    z-index: -1;
+    pointer-events: none;  /* Ensure it doesn't interfere with your other noble elements */
+}
+
+.logoImage {
+    height: 12vw;
+}
+
+header {
+    padding: 10px;
+    text-align: center;
+    width: 80vw;
+    display: inline-block;
+    justify-content: center;
+    margin-bottom: 20px;
+    
+}
+
+header h1 {
+    margin: 5px;
+    background-color: #383838;
+    text-align: left;
+    color: white;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    font-size: 8vw;
+}
+
+.linkSection a {
+    margin-left: 10px;
+    color: #333;
+    text-decoration: none;
+    opacity: 50%;
+}
+
+.listLinkItem p {
+    color: #333;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+section {
+    padding: 20px;
+    background-color: rgba(255, 255, 255, .5); /* Adjust the RGB values to match your color */
+    /* margin-bottom: 20px; */
+    width: 85vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    /* padding-bottom: 20vh; */
+    margin-bottom: 20vh;
+}
+
+section > * {
+    opacity: 1.0;
+}
+
+h2 {
+    background-color: #383838;
+    width: 80vw;
+    color: white;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 6vw;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 75%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-bottom: 20px;
+}
+
+.listLink {
+    border: rgb(0, 0, 0) solid 2px;
+    flex-grow: 1;
+    padding: 10px;
+    width: 100%;
+    margin: 10px;
+    font-weight: bold;
+    border-radius: 17px;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: white;
+    font-size: 4vw;
+}
+
+.promocodep {
+    margin-top: 0px;
+    padding-top: 0px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    font-size: 2vw;
+}
+
+.actualcodep {
+    margin-top: 0px;
+    padding-top: 0px;
+    font-size: 1.5vw;
+}
+
+.linkText {
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+
+.listLinkItem {
+    width: 33%;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.headerDiv { 
+    display: flex;
+    float: left;
 }
