@@ -9,6 +9,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,150;1,14..32,150&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="static/css/portfolioStyles.css">
     <script src="static/js/portfolio.js"></script>
+    <!-- Favicon declarations -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
 </head>
 <body>
     <nav class="navbar">
@@ -101,16 +111,16 @@
     </svg>
     <div id="portfolioGrid" class="porfolio-container">
         <div class="image-container">
-            <img id="MotionGraphicsShot" class="portfolioImage" src="static/media/pictures/SleeperCell1080Export.png" alt="Sample Image">
-            <div id="MotionGraphicsShot-label" class="picture-label">Synced Visuals</div>
+            <img id="MotionGraphicsShot" class="portfolioImage" src="static/media/pictures/MeYoShot.jpg" alt="Sample Image">
+            <div id="MotionGraphicsShot-label" class="picture-label">Visuals</div>
+        </div>
+        <div class="image-container">
+            <img id="LandOfInfinityShot" class="portfolioImage" src="static/media/pictures/MedziShot.jpg" alt="Sample Image">
+            <div id="LandOfInfinityShot-label" class="picture-label">Album Artwork</div>
         </div>
         <div class="image-container">
             <img id="LandOfInfinityShot" class="portfolioImage" src="static/media/pictures/LandOfInfinityShot.jpg" alt="Sample Image">
-            <div id="LandOfInfinityShot-label" class="picture-label">Live Production</div>
-        </div>
-        <div class="image-container">
-            <img id="LandOfInfinityShot" class="portfolioImage" src="static/media/pictures/LandOfInfinityShot.jpg" alt="Sample Image">
-            <div id="LandOfInfinityShot-label" class="picture-label">Album Art</div>
+            <div id="LandOfInfinityShot-label" class="picture-label">Production</div>
         </div>
         <div class="image-container"></div>
     </div>
@@ -155,159 +165,159 @@
         </div>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
-    <script id='perlinVisualization'>
-        let canvas;
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+<script id='perlinVisualization'>
+    let canvas;
 
-        function setup() {
-        canvas = createCanvas(windowWidth, windowHeight * .7);
-        //   canvas.style('display', 'block'); // This ensures the canvas does not have scrollbars
-        if (window.matchMedia("(max-width: 600px)").matches) {
-            canvas.position(0, 700);
-        } else {
-            canvas.position(0, 1000);
-        }
-        canvas.style('z-index', '-1');
-        // Other setup code...
-        }
-
-    function windowResized() {
-        resizeCanvas(windowWidth, windowHeight * .7);
+    function setup() {
+    canvas = createCanvas(windowWidth, windowHeight * .7);
+    //   canvas.style('display', 'block'); // This ensures the canvas does not have scrollbars
+    if (window.matchMedia("(max-width: 600px)").matches) {
+        canvas.position(0, 700);
+    } else {
+        canvas.position(0, 1000);
+    }
+    canvas.style('z-index', '-1');
+    // Other setup code...
     }
 
-        //let xOffset = 0;
-        //let yOffset = 10000;
-        let noiseValues = [];
-        let flash = false;
-        let speed = .001;
-        let scale = .001;
-        let time = 0;
+function windowResized() {
+    resizeCanvas(windowWidth, windowHeight * .7);
+}
+
+    //let xOffset = 0;
+    //let yOffset = 10000;
+    let noiseValues = [];
+    let flash = false;
+    let speed = .001;
+    let scale = .001;
+    let time = 0;
+    
+    function draw() {
+        // Update time based on scroll position
+        time = window.scrollY * 0.001; // Scale down scroll value for smoother effect
         
-        function draw() {
-            // Update time based on scroll position
-            time = window.scrollY * 0.001; // Scale down scroll value for smoother effect
-            
-            background(75);
-            for (let i = 0; i <= height; i++) {
-                let inter = map(i, 0, height/4, 0, 1);
-                let c;
-                if (i <= height/2) {
-                    c = lerpColor(color(0,0,0), color(90,90,90), inter);
-                } else {
-                    let inter2 = map(i, height/2, height, 0, 1);
-                    c = lerpColor(color(90,90,90), color(0,0,0), inter2);
-                }
-                stroke(c);
-                line(0, i, width, i);
+        background(75);
+        for (let i = 0; i <= height; i++) {
+            let inter = map(i, 0, height/4, 0, 1);
+            let c;
+            if (i <= height/2) {
+                c = lerpColor(color(0,0,0), color(90,90,90), inter);
+            } else {
+                let inter2 = map(i, height/2, height, 0, 1);
+                c = lerpColor(color(90,90,90), color(0,0,0), inter2);
             }
-
-            noFill();
-            drawWave(time, 255);
-            drawWave((time+1),150);
-            drawWave((time+2), 175);
-            drawWave((time+3), 175);
+            stroke(c);
+            line(0, i, width, i);
         }
 
-        function drawWave(time, fillOpacity) {
-        beginShape();
-        let xLineOffset = time;
-        for (var x = 0; x < width; x++) {
-            stroke(255);
-            // Make wave height respond to scroll position
-            let scrollFactor = map(window.scrollY,     // Current scroll position (input value)
-                                        0,                  // Minimum input value (top of page)
-                                        document.body.scrollHeight,  // Maximum input value (total scrollable height)
-                                        0.75,                // Minimum output value (wave height multiplier when at top)
-                                        2                   // Maximum output value (wave height multiplier when at bottom)
-                                    );
-            var y = map(noise(xLineOffset), 0, 1, 0, (height/2 + height/4) * scrollFactor);
-            vertex(x, y);
-            xLineOffset += scale;
-        }
-        strokeWeight(2);
+        noFill();
+        drawWave(time, 255);
+        drawWave((time+1),150);
+        drawWave((time+2), 175);
+        drawWave((time+3), 175);
+    }
+
+    function drawWave(time, fillOpacity) {
+    beginShape();
+    let xLineOffset = time;
+    for (var x = 0; x < width; x++) {
+        stroke(255);
+        // Make wave height respond to scroll position
+        let scrollFactor = map(window.scrollY,     // Current scroll position (input value)
+                                    0,                  // Minimum input value (top of page)
+                                    document.body.scrollHeight,  // Maximum input value (total scrollable height)
+                                    0.75,                // Minimum output value (wave height multiplier when at top)
+                                    2                   // Maximum output value (wave height multiplier when at bottom)
+                                );
+        var y = map(noise(xLineOffset), 0, 1, 0, (height/2 + height/4) * scrollFactor);
+        vertex(x, y);
+        xLineOffset += scale;
+    }
+    strokeWeight(2);
+    
+    if (flash) {
+        fill(map(random(1), 0, 1, 0, 255), fillOpacity);
+    } else {
+        fill(0, 0, 0, fillOpacity);
+    }
+    endShape(CLOSE);
+    }
+    // THIS IS FOR IF YOU WANT THE DRAWER LINES 
+    // function drawWave(time){
+    //     beginShape();
+    //     let xLineOffset = time;
+    //     for (var x = 0; x < width; x++) {
+    //         stroke(255);
+    //         var y = map(noise(xLineOffset),0,1,0,height);
+    //         vertex(x, y);
+    //         if (noiseValues.length >= 50) {
+    //             noiseValues.shift(); // Remove the oldest value if we have 50 values
+    //         }
+    //         noiseValues.push(y); // Add the new value
+    //         xLineOffset += scale;
+    //     };
+    //     strokeWeight(2);
+    //     vertex(height/2,max(map(noise(xLineOffset),0,1,0,height)-height),height*5);
         
-        if (flash) {
-            fill(map(random(1), 0, 1, 0, 255), fillOpacity);
-        } else {
-            fill(0, 0, 0, fillOpacity);
-        }
-        endShape(CLOSE);
-        }
-        // THIS IS FOR IF YOU WANT THE DRAWER LINES 
-        // function drawWave(time){
-        //     beginShape();
-        //     let xLineOffset = time;
-        //     for (var x = 0; x < width; x++) {
-        //         stroke(255);
-        //         var y = map(noise(xLineOffset),0,1,0,height);
-        //         vertex(x, y);
-        //         if (noiseValues.length >= 50) {
-        //             noiseValues.shift(); // Remove the oldest value if we have 50 values
-        //         }
-        //         noiseValues.push(y); // Add the new value
-        //         xLineOffset += scale;
-        //     };
-        //     strokeWeight(2);
-        //     vertex(height/2,max(map(noise(xLineOffset),0,1,0,height)-height),height*5);
-            
-        //     // vertex(0,height);
-        //     // let colorValues = getColor();
-        //     // fill(colorValues[0], colorValues[1], colorValues[2], 150);
-        //     if (flash){
-        //         fill(map(random(1),0,1,0,255), 150);
-        //     } else {
-        //         fill(110, 255, 246, 150);
-        //     }
+    //     // vertex(0,height);
+    //     // let colorValues = getColor();
+    //     // fill(colorValues[0], colorValues[1], colorValues[2], 150);
+    //     if (flash){
+    //         fill(map(random(1),0,1,0,255), 150);
+    //     } else {
+    //         fill(110, 255, 246, 150);
+    //     }
 
-            
-        //     endShape(CLOSE);
-        // }
-
-        // THIS IS FOR IF YOU WANT THE VALUES DISPLAYED ON PAGE
-        // function updateNoiseValuesDisplay() {
-        //     let list = document.getElementById('noiseList');
-        //     list.innerHTML = ''; // Clear the current list
-        //     noiseValues.forEach(value => {
-        //         let listItem = document.createElement('li');
-        //         listItem.textContent = value.toFixed(2); // Format the value to 2 decimal places
-        //         list.appendChild(listItem);
-        //     });
-        // }
-
-        // function getColor(){
-        //     let lightRed = [255, 110, 110];
-        //     let lightPink = [255, 110, 255];
-        //     let lightPurple = [207, 110, 255];
-        //     let lightBlue = [110, 163, 255];
-        //     let lightTeal = [110, 255, 246];
-        //     let lightGreen = [114, 255, 110];
-        //     let lightYellow = [251, 255, 110];
-        //     let lightOrange = [255, 183, 110];
-
-        //     let choices = [lightRed,lightRed,lightPink,
-        //                     lightPurple,lightBlue,lightTeal,
-        //                     lightGreen,lightYellow,lightOrange]
-
-            
-            
-        //     return choices[Math.round(random(1)*10,0)]
-        // }
-
-        // function logScrollPosition() {
-        //     console.log('Scroll position:', window.scrollY);
-        //     requestAnimationFrame(logScrollPosition);
-        // }
         
-        // logScrollPosition();
+    //     endShape(CLOSE);
+    // }
+
+    // THIS IS FOR IF YOU WANT THE VALUES DISPLAYED ON PAGE
+    // function updateNoiseValuesDisplay() {
+    //     let list = document.getElementById('noiseList');
+    //     list.innerHTML = ''; // Clear the current list
+    //     noiseValues.forEach(value => {
+    //         let listItem = document.createElement('li');
+    //         listItem.textContent = value.toFixed(2); // Format the value to 2 decimal places
+    //         list.appendChild(listItem);
+    //     });
+    // }
+
+    // function getColor(){
+    //     let lightRed = [255, 110, 110];
+    //     let lightPink = [255, 110, 255];
+    //     let lightPurple = [207, 110, 255];
+    //     let lightBlue = [110, 163, 255];
+    //     let lightTeal = [110, 255, 246];
+    //     let lightGreen = [114, 255, 110];
+    //     let lightYellow = [251, 255, 110];
+    //     let lightOrange = [255, 183, 110];
+
+    //     let choices = [lightRed,lightRed,lightPink,
+    //                     lightPurple,lightBlue,lightTeal,
+    //                     lightGreen,lightYellow,lightOrange]
+
+        
+        
+    //     return choices[Math.round(random(1)*10,0)]
+    // }
+
+    // function logScrollPosition() {
+    //     console.log('Scroll position:', window.scrollY);
+    //     requestAnimationFrame(logScrollPosition);
+    // }
+    
+    // logScrollPosition();
 
 
 
 
-    </script>
+</script>
 
 
 <script id="backgroundArrows">
-    const symbols = ['↑', '↗', '→', '↘', '↓', '↙', '←', '↖', '.'];
+    const symbols = ['↑', '→', '↓', '←'];
     
     function createFloatingSymbol() {
         const symbol = document.createElement('div');
@@ -411,13 +421,14 @@
         const rect = landOfInfinityShot.getBoundingClientRect();
 
         // Position strip to the left of the image
-        strip.style.left = `${rect.left - 10}px`;  // 50px offset to the left
+        strip.style.left = `${rect.left - 15}px`;  // 50px offset to the left
      
         // Create 5 arrows with staggered animations
         for(let i = 0; i < 15; i++) {
             const arrow = document.createElement('div');
             arrow.className = 'strip-arrow';
-            arrow.textContent = '↘';
+            arrow.textContent = '→';
+            arrow.style.transform = 'rotate(45deg)';
             arrow.style.animationDelay = `${i * 0.1}s`;
             strip.appendChild(arrow);
         }
