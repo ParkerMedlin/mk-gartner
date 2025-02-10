@@ -19,6 +19,7 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="msapplication-config" content="static/media/favicons/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
     <nav class="navbar">
@@ -29,7 +30,17 @@
             <div class="nav-links">
                 <a href="#top" id="portfolioLink" class="active">Projects</a>
                 <a href="#linksSectionContainer" id="linksNavLink">Links</a>
-                <a href="mailto:pmedlin@mkgartner.com">Contact</a>
+                <div class="dropdown">
+                    <a href="#" class="dropbtn">Contact</a>
+                    <button class="dropbtn">
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="mailto:pmedlin@mkgartner.com">Email Me</a>
+                        <a href="/pricelist.html">Price List</a>
+                        <a href="https://github.com/yourusername">GitHub</a>
+                    </div>
+                </div>
             </div>
         </div>
     </nav>
@@ -109,6 +120,7 @@
                                     0.47025 -1.5252252,0.70538 -2.3777524,0.70538 H 2.1568055 c -0.3463384,0 -0.6060936,-0.15672 -0.7792619,-0.47025 -0.1864899,-0.32775 -0.1998097,-0.65548 -0.039961,-0.98324 l 1.0989625,
                                     -2.22298 0.1598449,-0.32063 2.3999946,-4.36223 c 0.4795456,-0.98325 1.1589044,-1.75986 2.0380748,-2.32986 0.8791668,-0.57 1.8382596,-0.855 2.8772749,-0.855 z"/>
     </svg>
+
     <div id="portfolioGrid" class="porfolio-container">
         <div class="image-container">
             <img id="MotionGraphicsShot" class="portfolioImage" src="static/media/pictures/MeYoShot.jpg" alt="Sample Image">
@@ -317,7 +329,7 @@ function windowResized() {
 
 
 <script id="backgroundArrows">
-    const symbols = ['↑', '→', '↓', '←'];
+    const symbols = ['↑', '→', '↓', '←', '*'];
     
     function createFloatingSymbol() {
         const symbol = document.createElement('div');
@@ -330,8 +342,8 @@ function windowResized() {
         }
         
         // Random position
-        symbol.style.left = Math.random() * window.innerWidth + 'px';
-        symbol.style.top = Math.random() * window.innerHeight + 'px';
+        symbol.style.left = Math.min(Math.max(50, Math.random() * window.innerWidth), window.innerWidth - 50) + 'px';
+        symbol.style.top = Math.min(Math.max(10, Math.random() * window.innerHeight), window.innerHeight - 10) + 'px';
         symbol.style.position = 'absolute';
         
         document.body.appendChild(symbol);
@@ -360,54 +372,24 @@ function windowResized() {
         // Remove after animation
         setTimeout(() => {
             symbol.remove();
-        }, 3000);
+        }, 2500);
     }
 
     // Summon floating symbols at regular intervals from the void
+
     setInterval(() => {
         createFloatingSymbol();
-    }, 2000); // New symbol materializes every 2 seconds
+    }, 1150);
 
-
-    function createSymbolCluster() {
-        const cluster = document.createElement('div');
-        cluster.style.position = 'fixed';
-        cluster.style.left = Math.random() * window.innerWidth + 'px';
-        cluster.style.top = Math.random() * window.innerHeight + 'px';
-        
-        // Create 6 symbols in a circular arrangement
-        let clusterSymbol = symbols[Math.floor(Math.random() * symbols.length)]
-        for(let i = 0; i < 6; i++) {
-            const symbol = document.createElement('div');
-            symbol.className = 'floating-symbol';
-            symbol.textContent = clusterSymbol;
-            
-            // Calculate position in circular formation
-            const angle = (i * 60) * (Math.PI / 180); // 60 degrees per symbol
-            const radius = 30; // Adjust radius as needed
-            
-            symbol.style.position = 'absolute';
-            symbol.style.left = (radius * Math.cos(angle)) + 'px';
-            symbol.style.top = (radius * Math.sin(angle)) + 'px';
-            symbol.style.transformOrigin = 'bottom left';
-            symbol.style.transform = `rotate(${i * 60}deg)`; // Rotate each symbol
-            symbol.style.animationDelay = `${i * 0.1}s`;
-
-            
-            cluster.appendChild(symbol);
-        }
-        
-        document.body.appendChild(cluster);
-        
-        // Remove cluster after animation
-        setTimeout(() => {
-            cluster.remove();
-        }, 3000);
-    }
+    setInterval(() => {
+        createFloatingSymbol();
+    },2050);
 
     setInterval(() => {
         createFloatingSymbol();
     }, 8000);
+
+
 </script>
 
 <script>
