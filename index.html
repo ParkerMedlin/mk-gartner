@@ -1,85 +1,204 @@
 <!DOCTYPE html>
-<html>
-  <head>
-      <title>MK Gartner</title>
-      <link rel="stylesheet" type="text/css" href="static/css/styles.css">
-      <link rel="icon" type="image/x-icon" href="static/media/MKG_favicon.ico">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-  </head>
-  <!-- <body style='background-image: url("static/media/bw_trippp.png")'> -->
-  <body>
-    <canvas id="myCanvas" style="position: absolute; top: 0; left: 0; z-index: -1;"></canvas>
-    <!-- <div id="canvasContainer container" style="position: absolute; top: 0; left: 0; z-index: -1;"> -->
-    <div class="container">
-      <header class="mainHeader">
-        <!-- <h1 id="typedText">oi oi oiiiiii</h1> -->
-          <svg width="199.811" height="93.874" viewBox="0 0 52.867 24.837" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
-            <g style="stroke-width:1.18738">
-              <path d="m37.118 16.66-2.966 13.702 11.6-.005-5.212-6.726 7.3-6.97zM4.541 31.812c-.473.728-.797 1.525-.996 2.457-.155.707-.17 2.416-.025 3.114.19.936.648 2.048 1.111 2.685l.164.23h5.481v-5.531H6.638l.01 1.106.016 1.111.712.015.708.015v.543H6.335l-.07-.164c-.2-.474-.249-.802-.244-1.58.005-.717.015-.802.15-1.196l.144-.423 1.983-.015 1.978-.01v-2.74h-5.48Zm12.113-.334c-2.093.25-3.727 1.67-4.734 4.116-.503 1.236-.807 2.676-.911 4.365l-.025.339h2.63v-.294c0-.165.035-.563.075-.887.264-1.983 1.002-3.403 2.207-4.245l.16-.11v2.147H14.56v2.013h1.495v1.376h2.441v-8.869l-.757.005c-.419.005-.907.025-1.086.045zm2.491 4.38v4.44h2.491v-2.193h.738l.732.005 1.22 1.615c.668.886 1.236 1.604 1.256 1.589.02-.01.429-.468.912-1.016.608-.693.867-1.017.837-1.062-.02-.04-.373-.508-.782-1.046l-.737-.977.184-.214c.23-.269.488-.812.598-1.26.124-.499.114-1.515-.02-2.028-.274-1.047-.952-1.78-1.968-2.118l-.404-.14-2.526-.014-2.531-.015zm4.53-1.719c.223.12.323.314.323.638.005.234-.02.304-.12.413-.239.255-.323.274-1.32.274h-.922V34.07h.947s.981.015 1.091.07zm3.592-1.34v1.37h1.395l.01 3.05.015 3.054 1.235.015 1.23.01v-6.129h1.396v-2.74h-5.281zm6.063-1.335c-.02.014-.035 2.012-.035 4.434v4.4h2.441v-5.536l.155.09c.09.05.349.269.578.483 1.066 1.006 1.814 2.725 1.894 4.375l.03.588h2.426v-8.869h-2.441v2.74c-.188-.703-1.49-2.45-3.134-2.666-.539-.074-1.854-.1-1.914-.04zm8.186-.035v8.868h5.78v-2.74h-3.288v-.597h2.291v-2.193h-2.291v-.598h3.288v-2.74h-2.89zm6.428 4.429v4.44h2.491v-2.193h.738l.732.005 1.146 1.52c.633.832 1.18 1.564 1.226 1.624.08.1.104.075.986-.932l.907-1.03-.12-.155c-.064-.09-.413-.558-.777-1.042l-.657-.882.199-.249c.254-.324.433-.707.558-1.19.13-.499.14-1.42.02-1.954-.244-1.076-.962-1.883-1.988-2.227l-.404-.14-2.526-.014-2.531-.015zm4.564-1.694c.314.194.398.723.164 1.021-.199.255-.314.28-1.315.28h-.922v-1.396h.962c.852 0 .971.01 1.11.095zm-42.476-3.777 21.356.005 3.301-13.731-9.75 8.071 1.554-8.071z" style="fill:#ffffff;" transform="matrix(.84244 0 0 .84194 1.327 -11.951)"/>
-            </g>
-          </svg>
-      </header>
-      <!-- <section id="contactCard" class="fadeIn" style="display: none;">
-        <a href="static/media/ParkerMedlin.vcf" id="downloadLink" download>
-          <button class="contactCardButton">Download Contact Info</button>
-        </a>
-      </section> -->
-      <section id="linkSection" class="fadeIn">
-          <div class="headerDiv"><h2>Links</h2></div>
-          <ul class="linkList">
-            <!-- <a class="listLink" href="https://www.eventbrite.com/e/murda-one-x-hi-vi-sound-tickets-879585412647">
-              <div class="listLinkItem linkListLogo"><img class="logoImage" src="static/media/logos/trim.JPG"></div>
-              <div class="listLinkItem"><p>TrimTab Show</p></div>
-              <div class="listLinkItem"><p></p></div>
-            </a> -->
-            <a class="listLink" href="https://instagram.com/mk.gartner">
-              <div class="listLinkItem linkListLogo"><img class="logoImage" src="static/media/logos/instagramLogo.png"></div>
-              <div class="listLinkItem"><p>instagram</p></div>
-              <div class="listLinkItem"><p></p></div>
-            </a>
-            <a class="listLink" href="https://www.youtube.com/@MKGartner">
-              <div class="listLinkItem linkListLogo"><img class="logoImage" src="static/media/logos/youtubeLogo.png"></div>
-              <div class="listLinkItem"><p>youtube</p></div>
-              <div class="listLinkItem"><p> </p></div>
-            </a>
-            <a class="listLink" href="https://github.com/parkermedlin">
-              <div class="listLinkItem linkListLogo"><img class="logoImage" src="static/media/logos/githubLogo.png"></div>
-              <div class="listLinkItem"><p>github</p></div>
-              <div class="listLinkItem"><p> </p></div>
-            </a>
-            <!-- <a class="listLink" href="https://soundcloud.com/mkgartner/">
-              <div class="listLinkItem linkListLogo"><img class="logoImage" src="static/media/logos/soundcloudLogo.png"></div>
-              <div class="listLinkItem"><p>DNB FREE DLLLL</p></div>
-              <div class="listLinkItem"><p> </p></div>
-            </a> -->
-          </ul>
-      </section>
-      <!-- <section id="projectsSection" class="fadeIn">
-        <div class="headerDiv"><h2>Coding Projects</h2></div>
-          <ul>
-              <li style="padding: 20px"><a href="https://parkermedlin.github.io/practice-keyboard/">Music Note Practice</a></li>
-          </ul>
-          <ul>
-            <li style="padding: 20px"><a href="https://github.com/ParkerMedlin/crate-folder-tool/">Music File Organizer</a></li>
-        </ul>
-      </section> -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,150;1,14..32,150&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="static/css/portfolioStyles.css">
+    <script src="static/js/portfolio.js"></script>
+    <!-- Favicon declarations -->
+    <link rel="apple-touch-icon" sizes="180x180" href="static/media/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/media/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/media/favicons/favicon-16x16.png">
+    <link rel="manifest" href="static/media/favicons/site.webmanifest">
+    <link rel="mask-icon" href="static/media/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="static/media/favicons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="static/media/favicons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <!-- <div class="nav-brand">
+                <a href="index.html"></a>
+            </div> -->
+            <div class="nav-links">
+                <a href="#top" id="portfolioLink" class="active">Projects</a>
+                <a href="#linksSectionContainer" id="linksNavLink">Links</a>
+                <div class="dropdown">
+                    <a href="#" class="dropbtn">Contact</a>
+                    <button class="dropbtn">
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a href="mailto:pmedlin@mkgartner.com">Email Me</a>
+                        <a href="/pricelist.html">Price List</a>
+                        <a href="https://github.com/yourusername">GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- https://css-tricks.com/scale-svg/#aa-the-viewbox-attribute -->
+    <svg id="logo" viewBox="80 120 50 40" preserveAspectRatio="xMidYMid meet">
+        <path class="logo-path" d="m 142.62187,149.10096 c 0.34794,-0.10435 0.63208,-0.018 0.85245,0.26095 0.23196,0.27834 0.44905,0.64737 0.28669,0.96051 l -0.91805,1.64242 c -0.34794,0.6611 -0.9453,1.00002 -1.58319,
+                                    1.39436 -0.63789,0.38272 -1.33376,0.57365 -2.08763,0.57408 l -13.36885,0.007 c -0.30154,1.8e-4 -0.5277,-0.12757 -0.67848,-0.38272 -0.16229,-0.26675 -0.17399,-0.53351 -0.0347,
+                                    -0.80026 l 6.44056,-12.14485 c 0.17399,-0.32473 0.16229,-0.64366 -0.0347,-0.95682 -0.19718,-0.32473 -0.48132,-0.48709 -0.85247,-0.48709 -0.0811,0 -0.14502,-0.0347 -0.19135,
+                                    -0.10436 -0.0464,-0.0812 -0.0464,-0.15653 0,-0.22615 0.15078,-0.28995 0.38853,-0.43493 0.71326,-0.43493 h 5.818 c 0.6147,0 1.07861,0.26096 1.39175,0.78287 0.31316,0.5103 0.32475,
+                                    1.038 0.0347,1.5831 l -0.71328,1.37435 h 6.52515 c 0.0811,0 0.13908,0.0407 0.17398,0.12181 0.0464,0.0696 0.0522,0.13909 0.018,0.20875 -0.15078,0.28995 -1.02174,1.56259 -1.34649,
+                                    1.56259 h -5.91624 c -0.32474,0 -0.63688,0.11533 -0.78765,0.40516 0,0 -3.81703,6.98738 -3.90629,7.56757 0.0209,0.54085 0.29319,0.82133 0.65996,0.93413 0.21204,0.0651 0.47052,
+                                    0.0545 0.69187,0.0568 0.6101,0.007 0.9507,-0.13674 1.22904,-0.29925 0.44944,-0.19629 0.96532,-1.1385 1.15756,-1.37178 0.23196,-0.44072 1.58494,-0.75606 2.06046,-0.90682 z m -81.296187,
+                                    2.54514 c 0,1.26741 -1.027442,2.29487 -2.294859,2.29487 -1.267424,0 -2.294872,-1.02746 -2.29487,-2.29487 -2e-6,-1.26742 1.027446,-2.29486 2.29487,-2.29486 1.267417,0 2.294859,1.02744 2.294859,
+                                    2.29486 z m -8.172884,-4.66643 c 0.712496,0 1.261118,0.29925 1.645865,0.89773 0.398998,0.59851 0.455997,1.21838 0.171,1.85961 l -0.02137,0.0214 c -0.01421,0.0428 -0.0285,0.0855 -0.04275,
+                                    0.12829 l -0.741885,1.40386 c -0.370498,0.7125 -0.883495,1.29675 -1.538991,1.75274 -0.655495,0.45601 -1.382243,0.74101 -2.180238,0.85498 -0.213749,0.0284 -0.441747,0.0428 -0.683996,
+                                    0.0428 h -3.21791 c -0.07125,0 -0.135375,-0.007 -0.192371,-0.0214 -0.0285,0 -0.06412,-0.007 -0.106875,-0.0214 -0.284997,-0.0855 -0.491621,-0.27073 -0.619871,-0.55573 -0.114,-0.285 -0.09975,
+                                    -0.57 0.04275,-0.85499 l 0.33692,-0.63374 0.235123,-0.47026 -0.0045,0.004 c 0.01421,-0.0284 0.03563,-0.0641 0.06412,-0.10687 0.284999,-0.65548 1.25484,-1.86487 0.870093,-2.46337 -0.384747,
+                                    -0.5985 -0.940494,-0.89775 -1.667241,-0.89775 H 44.43193 c -0.313499,0 -0.605623,0.0855 -0.876371,0.2565 -0.270749,0.15672 -0.477372,0.3705 -0.619872,0.64125 l -1.319007,2.47262 c -0.427497,
+                                    0.81223 -1.033119,1.4606 -1.816865,1.94511 -0.783745,0.47025 -1.631614,0.70537 -2.543608,0.70537 h -2.543611 c -0.370498,0 -0.648372,-0.15671 -0.83362,-0.47023 -0.199499,-0.32777 -0.213747,
+                                    -0.6555 -0.04275,-0.98323 l 1.175618,-2.22303 0.171,-0.32062 2.356705,-4.45984 1.948634,-3.57512 c 0.0855,-0.17093 0.130536,-0.35623 0.128251,-0.55573 -0.01044,-0.91789 -0.678789,-0.91756 -1.733287,
+                                    -0.91789 l -17.980006,-0.005 c -1.731248,-5.2e-4 -1.434631,-1.08274 -1.935788,-1.08289 -4.505244,-10e-4 -7.9974827,-0.002 -8.1056245,-0.002 -0.07125,0 -0.1353752,-0.0284 -0.1923734,-0.0855 -0.057,
+                                    -0.057 -0.0855,-0.12109 -0.0855,-0.19236 0,-0.0428 0.014214,-0.0855 0.04275,-0.12829 0.1852502,-0.35623 0.4773719,-0.53437 0.8763709,-0.53437 h 34.629926 c 0.755245,0 1.325243,0.32062 1.70999,
+                                    0.96189 0.384746,0.62699 -0.403578,2.77098 -0.759829,3.44072 -0.242248,0.456 -1.84351,3.50322 -2.185508,4.17295 l 5.215557,-2.13977 c 0.1425,-0.0815 0.2565,-0.17291 0.341999,-0.28687 0.09975,
+                                    -0.12829 0.149625,-0.26366 0.149625,-0.40613 0,-0.32777 -0.121125,-0.61277 -0.363374,-0.855 -0.227998,-0.24225 -0.512995,-0.36339 -0.854994,-0.36339 -0.057,0 -0.106875,-0.0144 -0.149625,
+                                    -0.0426 -0.04275,-0.0284 -0.07838,-0.0641 -0.106875,-0.10688 -0.01421,-0.0428 -0.02137,-0.0855 -0.02137,-0.12829 0,-0.0428 0.01421,-0.0855 0.04275,-0.12828 0.185248,-0.35625 0.47737,
+                                    -0.53438 0.876369,-0.53438 h 7.185379 c 0.455997,0 1.018771,0.15726 1.303868,0.32063 0.157794,0.1272 0.240739,0.29311 0.235125,0.47025 -0.02798,0.12631 -0.139441,0.25452 -0.320625,
+                                    0.38475 l -6.000748,2.87253 c -0.233615,0.14448 -0.359055,0.28797 -0.330557,0.55877 0.04275,0.25648 0.199499,0.38474 0.470249,0.38474 z m 33.768379,-4.99166 c 0.24224,0 0.448867,
+                                    0.0785 0.619867,0.23511 0.185247,0.15671 0.299254,0.342 0.341999,0.55573 0.04273,0.21375 0.01421,0.43462 -0.08546,0.66262 l -6.575544,12.44461 c -0.427497,0.81221 -1.033119,1.45346 -1.816864,
+                                    1.92371 -0.783744,0.48452 -1.63874,0.72675 -2.564984,0.72675 H 60.611666 c -0.07125,0 -0.128251,-0.0214 -0.171001,-0.0641 -0.057,-0.0426 -0.0855,-0.0927 -0.0855,-0.1497 -0.01421,-0.057 -0.007,
+                                    -0.12109 0.02137,-0.19237 0.185249,-0.35625 0.553925,-1.31955 0.95819,-1.57943 0.208271,-0.13387 -0.134314,-0.0592 4.106621,-0.0828 h 5.348939 c 0.911996,0 1.759865,-0.23512 2.543611,
+                                    -0.70536 0.783745,-0.47025 1.389366,-1.1115 1.816864,-1.92375 l 0.748888,-1.43718 -1.538992,0.79086 c -0.954744,0.49875 -1.966488,0.74812 -3.03523,0.74812 h -7.096459 c -0.370499,
+                                    0 -0.648373,-0.15671 -0.833621,-0.47025 -0.199499,-0.32773 -0.213747,-0.65546 -0.04275,-0.98321 l 1.154242,-2.22299 0.171001,-0.32064 2.450191,-4.64274 c 0.527248,-1.01175 1.282493,
+                                    -1.81686 2.265739,-2.41536 0.983242,-0.5985 2.051987,-0.89775 3.206231,-0.89775 z m -6.754464,2.35122 c 0.156751,-0.32777 0.135376,-0.64126 -0.06413,-0.94051 -0.1995,-0.3135 -0.477373,
+                                    -0.47025 -0.83362,-0.47025 -1.154243,0 -2.222987,0.29927 -3.206233,0.89777 -0.983242,0.58425 -1.73849,1.38934 -2.265735,2.41536 l -3.155562,6.01074 c -0.09975,0.17093 -0.09975,0.342 0,
+                                    0.513 0.09975,0.15671 0.249373,0.23513 0.448872,0.23513 1.068742,0 2.080488,-0.24225 3.035232,-0.72676 1.63874,-0.84075 2.899857,-2.07335 3.783353,-3.69784 z m 28.290976,-2.35122 c 0.3705,
+                                    0 0.64837,0.16391 0.83362,0.49161 0.1995,0.31348 0.21375,0.6341 0.0428,0.96185 l -4.82278,9.17423 c -0.21375,0.41325 -0.52013,0.74102 -0.91913,0.98325 -0.38475,0.22802 -0.80512,0.342 -1.26113,
+                                    0.342 h -4.03984 c -0.3705,0 -0.6555,-0.15672 -0.855001,-0.47025 -0.18525,-0.32775 -0.192375,-0.65547 -0.02141,-0.98323 l 0.06405,-0.10688 -1.581737,0.81223 c -0.954737,0.49875 -1.966488,
+                                    0.74813 -3.035233,0.74813 h -7.09655 c -0.370497,0 -0.648364,-0.15672 -0.833623,-0.47025 -0.199495,-0.32775 -0.213743,-0.65548 -0.04273,-0.98323 l 1.175621,-2.22299 0.171,-0.32064 2.450194,
+                                    -4.64274 c 0.527247,-1.01175 1.282487,-1.81688 2.265731,-2.41538 0.983244,-0.5985 2.044869,-0.89773 3.184865,-0.89773 z m -6.77585,2.39397 c 0.18525,-0.34201 0.17812,-0.66976 -0.0214,
+                                    -0.98326 -0.18524,-0.3135 -0.47025,-0.47025 -0.85499,-0.47025 -1.139998,0 -2.201607,0.29927 -3.184858,0.89777 -0.983251,0.58425 -1.738495,1.38934 -2.265742,2.41536 l -2.774171,
+                                    5.13199 c -0.08546,0.17111 -0.07837,0.342 0.02136,0.513 0.09975,0.15671 0.249372,0.23512 0.448866,0.23512 1.068745,0 2.073367,-0.24225 3.013847,-0.72673 1.710002,-0.8835 3.013879,
+                                    -2.17313 3.911612,-3.86886 z m 26.21764,-2.39397 c 0.228,0 0.43461,0.0785 0.61986,0.23511 0.18525,0.1425 0.29925,0.3206 0.342,0.53437 0.0428,0.19948 0.0214,0.41323 -0.0641,0.64123 -0.285,
+                                    0.57 -0.73387,0.94763 -1.34662,1.13288 l -5.36508,1.62448 c -0.41325,0.12829 -0.76238,0.0214 -1.04738,-0.32062 -0.27075,-0.342 -0.30635,-0.70538 -0.10687,-1.09013 l 0.19235,-0.36335 c 0.17093,
+                                    -0.34201 0.15672,-0.66976 -0.0426,-0.98326 -0.18525,-0.3135 -0.46312,-0.47025 -0.83361,-0.47025 h -0.40612 c -0.1425,0 -0.28498,0.0144 -0.42748,0.0427 -0.12829,0.0144 -0.2565,0.0498 -0.38475,
+                                    0.10687 -0.11408,0.0426 -0.228,0.0997 -0.342,0.17093 -0.11408,0.0712 -0.22088,0.1497 -0.32063,0.23512 -0.0997,0.0855 -0.19238,0.18525 -0.27788,0.29925 -0.0855,0.0997 -0.16391,0.20663 -0.23512,
+                                    0.32061 l -3.77543,7.18637 c -0.4275,0.81225 -1.04025,1.46062 -1.83823,1.94512 -0.78375,0.47027 -1.63163,0.70538 -2.54361,0.70538 h -2.54363 c -0.37048,0 -0.64838,-0.15671 -0.83361,
+                                    -0.47023 -0.1995,-0.32775 -0.21375,-0.6555 -0.0426,-0.98325 l 3.8823,-7.33599 c 0.51298,-0.969 1.23973,-1.73849 2.18024,-2.30849 0.9405,-0.57 1.95937,-0.855 3.05661,-0.855 z m 37.70794,
+                                    0 c 0.741,0 1.30388,0.32062 1.68861,0.96184 0.38475,0.627 0.40613,1.27538 0.0641,1.94513 l -3.3693,6.39548 c -0.4275,0.81224 -1.04025,1.46061 -1.83823,1.94511 -0.78374,0.47025 -1.63161,
+                                    0.70538 -2.54361,0.70538 h -2.54363 c -0.37048,0 -0.65548,-0.15672 -0.85498,-0.47025 -0.18525,-0.32775 -0.19238,-0.65547 -0.0214,-0.98323 l 3.51895,-6.67339 c 0.18525,-0.32775 0.25648,
+                                    -0.66262 0.21373,-1.00459 -0.0284,-0.342 -0.12109,-0.64839 -0.27787,-0.91912 -0.15672,-0.285 -0.38474,-0.51302 -0.68399,-0.684 -0.29925,-0.18525 -0.63412,-0.27788 -1.00462,
+                                    -0.27788 H 156.865 c -0.29925,0 -0.58425,0.0855 -0.855,0.2565 -0.27075,0.15672 -0.47738,0.3705 -0.61988,0.64125 l -3.94643,7.46424 c -0.4275,0.81223 -1.0331,1.46061 -1.81685,
+                                    1.94511 -0.78376,0.47025 -1.63163,0.70538 -2.54362,0.70538 h -2.54361 c -0.3705,0 -0.64837,-0.15672 -0.83362,-0.47025 -0.1995,-0.32775 -0.21373,-0.6555 -0.0428,-0.98324 l 1.17562,
+                                    -2.223 0.17093,-0.32063 2.51432,-4.771 c 0.51298,-0.98323 1.23973,-1.75986 2.18023,-2.32984 0.94051,-0.57 1.96649,-0.855 3.07799,-0.855 z m 22.69078,0 c 0.18525,0 0.35623,
+                                    0.0498 0.51298,0.1497 0.15672,0.0855 0.27788,0.2066 0.36338,0.36335 0.0855,0.1425 0.12829,0.29925 0.12829,0.47025 0,0.17093 -0.63166,1.7638 -0.71718,1.90632 -0.0997,0.1995 -0.22799,
+                                    0.37763 -0.38474,0.53436 -0.228,0.22802 -0.49162,0.399 -0.79087,0.51302 l -7.58808,2.28711 -6.3911,1.92373 -0.1497,0.0641 -0.22058,0.36483 c -0.17093,0.32775 -0.7909,1.31541 -0.60565,
+                                    1.62891 0.1995,0.31348 0.48448,0.47023 0.85498,0.47023 h 3.05662 c 0.1995,0 0.39187,-0.0498 0.57712,-0.1497 0.18525,-0.11407 0.32775,-0.2636 0.4275,-0.44885 0.1425,-0.285 0.3705,
+                                    -0.47738 0.684,-0.57713 l 5.79258,-1.75275 c 0.32775,-0.0997 0.61988,-0.0428 0.87636,0.17093 0.2565,0.1995 0.38477,0.46312 0.38477,0.79087 0,0.15672 -0.0356,0.30636 -0.10688,
+                                    0.44888 -0.399,0.75523 -1.01364,1.6903 -1.74039,2.13205 -0.72675,0.44175 -1.51763,0.66263 -2.37263,0.66263 h -15.28305 c -0.3705,0 -0.64838,-0.15672 -0.83363,-0.47026 -0.1995,
+                                    -0.32775 -0.21375,-0.65548 -0.0428,-0.98323 l 3.86093,-7.31463 c 0.513,-0.98323 1.23973,-1.75986 2.18023,-2.32984 0.9405,-0.57 1.96649,-0.855 3.07799,-0.855 z m -6.49795,1.88096 c 0.11407,
+                                    -0.21375 0.10687,-0.42037 -0.0214,-0.61987 -0.12829,-0.21373 -0.3135,-0.32063 -0.55575,-0.32063 h -0.70538 c -1.11148,0 -2.13749,0.285 -3.07797,0.855 -0.9405,0.57001 -1.66725,1.34663 -2.18025,
+                                    2.32986 l -1.21836,2.32986 4.31772,-1.30387 c 0.69825,-0.21373 1.32525,-0.56288 1.88098,-1.04736 0.57,-0.4845 1.01176,-1.06161 1.32526,-1.73136 z m 26.15314,-1.88094 c 0.228,0 0.4346,
+                                    0.0784 0.61985,0.23512 0.18525,0.1425 0.29925,0.32063 0.342,0.53438 0.0428,0.1995 0.0214,0.41325 -0.0641,0.64125 -0.285,0.56998 -0.73388,0.94761 -1.34663,1.13286 l -5.36507,
+                                    1.62448 c -0.41325,0.12829 -0.76238,0.0214 -1.04738,-0.32062 -0.27075,-0.34201 -0.30636,-0.70538 -0.10688,-1.09011 l 0.19238,-0.36338 c 0.17093,-0.342 0.15671,-0.66975 -0.0428,
+                                    -0.98323 -0.18525,-0.3135 -0.46313,-0.47025 -0.83363,-0.47025 h -0.40612 c -0.1425,0 -0.285,0.0144 -0.4275,0.0426 -0.12829,0.0144 -0.25649,0.0498 -0.38475,0.10687 -0.11408,
+                                    0.0428 -0.22801,0.0997 -0.34201,0.17093 -0.11407,0.0712 -0.22087,0.1497 -0.3206,0.23511 -0.0997,0.0855 -0.1924,0.18525 -0.2779,0.29925 -0.0855,0.0997 -0.16391,0.20663 -0.2351,
+                                    0.32063 l -3.77543,7.18636 c -0.4275,0.81225 -1.04025,1.46061 -1.83825,1.94511 -0.78375,0.47025 -1.63161,0.70538 -2.54361,0.70538 h -2.54361 c -0.37049,0 -0.64838,-0.15672 -0.83361,
+                                    -0.47026 -0.1995,-0.32775 -0.21375,-0.65546 -0.0426,-0.98323 l 3.8823,-7.33601 c 0.51298,-0.96896 1.23973,-1.73846 2.18023,-2.30844 0.94049,-0.57001 1.95936,-0.85501 3.0566,
+                                    -0.85501 z m -174.344022,0.29516 c 0.692675,0 1.218842,0.32063 1.578503,0.96188 0.35966,0.627 0.379631,1.27538 0.05991,1.94513 l -3.199244,5.98671 c -0.399621,0.81224 -0.972411,
+                                    1.46063 -1.718371,1.94511 -0.732643,0.47025 -1.525227,0.70538 -2.377752,0.70538 h -2.377751 c -0.346345,0 -0.612761,-0.15672 -0.799247,-0.47025 -0.173178,-0.32775 -0.179835,-0.65548 -0.01997,
+                                    -0.98324 l 2.953813,-5.93731 c 0.186488,-0.456 0.239771,-0.89773 0.159845,-1.32523 -0.06659,-0.4275 -0.273054,-0.79087 -0.619415,-1.09013 -0.333023,-0.31348 -0.725987,-0.47025 -1.178891,
+                                    -0.47025 H 25.05176 c -0.293056,0 -0.566129,0.0855 -0.819221,0.2565 -0.239773,0.15672 -0.432926,0.3705 -0.57946,0.64126 l -0.459565,0.96185 -0.01997,0.0428 c -0.01332,0.0284 -0.01997,
+                                    0.0498 -0.01997,0.0641 l -2.813934,5.65943 c -0.399629,0.81224 -0.972422,1.46061 -1.71838,1.94511 -0.732643,0.47025 -1.525227,0.70538 -2.377752,0.70538 h -2.377753 c -0.346338,
+                                    0 -0.612754,-0.15672 -0.799249,-0.47025 -0.17316,-0.32775 -0.179817,-0.65548 -0.01997,-0.98324 l 0.599433,-1.21837 0.499522,-1.00461 0.139874,-0.32063 1.754949,-3.50057 c 0.159845,
+                                    -0.44175 0.193133,-0.86925 0.09988,-1.2825 -0.07992,-0.41323 -0.286395,-0.76236 -0.619417,-1.04736 -0.333013,-0.29925 -0.719316,-0.44888 -1.158904,-0.44888 h -1.019031 c -0.279738,
+                                    0 -0.546156,0.0855 -0.79925,0.2565 -0.253093,0.15672 -0.446242,0.3705 -0.579445,0.64126 l -3.3534362,6.72816 c -0.3996213,0.81224 -0.9657518,1.46061 -1.6983917,1.94511 -0.7326417,
+                                    0.47025 -1.5252252,0.70538 -2.3777524,0.70538 H 2.1568055 c -0.3463384,0 -0.6060936,-0.15672 -0.7792619,-0.47025 -0.1864899,-0.32775 -0.1998097,-0.65548 -0.039961,-0.98324 l 1.0989625,
+                                    -2.22298 0.1598449,-0.32063 2.3999946,-4.36223 c 0.4795456,-0.98325 1.1589044,-1.75986 2.0380748,-2.32986 0.8791668,-0.57 1.8382596,-0.855 2.8772749,-0.855 z"/>
+    </svg>
+
+    <div id="portfolioGrid" class="porfolio-container">
+        <div class="image-container">
+            <img id="MotionGraphicsShot" class="portfolioImage" src="static/media/pictures/MeYoShot.jpg" alt="Sample Image">
+            <div id="MotionGraphicsShot-label" class="picture-label">Animation</div>
+        </div>
+        <div class="image-container">
+            <img id="LandOfInfinityShot" class="portfolioImage" src="static/media/pictures/MedziShot.jpg" alt="Sample Image">
+            <div id="LandOfInfinityShot-label" class="picture-label">Album Artwork</div>
+        </div>
+        <div class="image-container">
+            <img id="LandOfInfinityShot" class="portfolioImage" src="static/media/pictures/LandOfInfinityShot.jpg" alt="Sample Image">
+            <div id="LandOfInfinityShot-label" class="picture-label">Production</div>
+        </div>
+        <div class="image-container"></div>
     </div>
-  </body>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
-  <script>
+
+    <div id="linksSectionContainer">
+
+        <!-- <div id="canvasContainer container" style="position: absolute; top: 0; left: 0; z-index: -1;"> -->
+        <div class="container">
+            <section id="linkSection" class="fadeIn">
+                <div class="headerDiv"><h2>Links</h2></div>
+                <ul class="linkList">
+                    <!-- <a class="listLink" href="https://www.eventbrite.com/e/murda-one-x-hi-vi-sound-tickets-879585412647">
+                    <div class="listLinkItem linkListLogo"><img class="logoImage" src="static/media/logos/trim.JPG"></div>
+                    <div class="listLinkItem"><p>TrimTab Show</p></div>
+                    <div class="listLinkItem"><p></p></div>
+                    </a> -->
+                    <!-- <a class="listLink" href="https://instagram.com/mk.gartner">
+                        <div class="listLinkItem"><img class="logoImage" src="static/media/logos/instagramLogo.png"><p class="linkText">instagram</p></div>
+                    </a> -->
+                    <a class="listLink" href="mailto:pmedlin@mkgartner.com">
+                        <div class="listLinkItem"><img class="logoImage" src="static/email-circle-fill-icon-256x256-7578sn39.png"><p class="linkText">email</p></div>
+                    </a>
+                    <a class="listLink" href="https://www.youtube.com/@MKGartner">
+                        <div class="listLinkItem"><img class="logoImage" src="static/media/logos/youtubeLogo.png"><p class="linkText">youtube</p></div>
+                    </a>
+                    <a class="listLink" href="https://github.com/parkermedlin">
+                        <div class="listLinkItem"><img class="logoImage" src="static/media/logos/githubLogo.png"><p class="linkText">github</p></div>
+                    </a>
+                    <!-- <a class="listLink" href="https://soundcloud.com/mkgartner/">
+                    <div class="listLinkItem linkListLogo"><img class="logoImage" src="static/media/logos/soundcloudLogo.png"></div>
+                    <div class="listLinkItem"><p>DNB FREE DLLLL</p></div>
+                    <div class="listLinkItem"><p> </p></div>
+                    </a> -->
+                </ul>
+            </section>
+        <!-- <section id="projectsSection" class="fadeIn">
+            <div class="headerDiv"><h2>Coding Projects</h2></div>
+            <ul>
+                <li style="padding: 20px"><a href="https://parkermedlin.github.io/practice-keyboard/">Music Note Practice</a></li>
+            </ul>
+            <ul>
+                <li style="padding: 20px"><a href="https://github.com/ParkerMedlin/crate-folder-tool/">Music File Organizer</a></li>
+            </ul>
+        </section> -->
+        </div>
+    </div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+<script id='perlinVisualization'>
     let canvas;
 
     function setup() {
-      canvas = createCanvas(windowWidth, windowHeight * 1.5);
-      canvas.style('display', 'block'); // This ensures the canvas does not have scrollbars
-      canvas.position(0, 0);
-      canvas.style('z-index', '-1');
-      // Other setup code...
+    canvas = createCanvas(windowWidth, windowHeight * .7);
+    //   canvas.style('display', 'block'); // This ensures the canvas does not have scrollbars
+    if (window.matchMedia("(max-width: 600px)").matches) {
+        canvas.position(0, 700);
+    } else {
+        canvas.position(0, 1000);
+    }
+    canvas.style('z-index', '-1');
+    // Other setup code...
     }
 
-  function windowResized() {
-    resizeCanvas(windowWidth, windowHeight * 1.5);
-  }
+function windowResized() {
+    resizeCanvas(windowWidth, windowHeight * .7);
+}
 
     //let xOffset = 0;
     //let yOffset = 10000;
@@ -88,56 +207,57 @@
     let speed = .001;
     let scale = .001;
     let time = 0;
+    
     function draw() {
+        // Update time based on scroll position
+        time = window.scrollY * 0.001; // Scale down scroll value for smoother effect
+        
         background(75);
         for (let i = 0; i <= height; i++) {
-            let inter = map(i, 0, height, 0, 1);
-            // pink to yellow:
-            // let c = lerpColor(color(255, 110, 255), color(251, 255, 110), inter);
-            let c = lerpColor(color(0,0,0), color(255, 255, 255), inter);
+            let inter = map(i, 0, height/4, 0, 1);
+            let c;
+            if (i <= height/2) {
+                c = lerpColor(color(0,0,0), color(90,90,90), inter);
+            } else {
+                let inter2 = map(i, height/2, height, 0, 1);
+                c = lerpColor(color(90,90,90), color(0,0,0), inter2);
+            }
             stroke(c);
             line(0, i, width, i);
         }
-        //fill(255, 0, 0);
-        //let xPosition = map(noise((xOffset)), 0, 1, 0, width);
-        //let yPosition = map(noise((yOffset)), 0, 1, 0, height);
-        //xOffset += .01;
-        //yOffset += .01;
-        //ellipse(xPosition, yPosition , 10, 10 );
 
         noFill();
-        drawWave(time);
-        drawWave(time+1);
-        drawWave(time+2);
-        drawWave(time+3);
-        drawWave(time+4);
-        drawWave(time+5);
-        drawWave(time+6);
-        time += speed;
-        // updateNoiseValuesDisplay();
+        drawWave(time, 255);
+        drawWave((time+1),150);
+        drawWave((time+2), 175);
+        drawWave((time+3), 175);
     }
 
-    function drawWave(time) {
-      beginShape();
-      let xLineOffset = time;
-      for (var x = 0; x < width; x++) {
-          stroke(255);
-          var y = map(noise(xLineOffset), 0, 1, 0, height/2);
-          vertex(x, y);
-          xLineOffset += scale;
-      }
-      strokeWeight(2);
-      // The following line has been removed to prevent the erroneous vertex from being created.
-      // vertex(height/2, max(map(noise(xLineOffset), 0, 1, 0, height) - height), height * 5);
-      
-      if (flash) {
-          fill(map(random(1), 0, 1, 0, 255), 150);
-      } else {
-          fill(110, 255, 246, 150);
-      }
-      endShape(CLOSE);
+    function drawWave(time, fillOpacity) {
+    beginShape();
+    let xLineOffset = time;
+    for (var x = 0; x < width; x++) {
+        stroke(255);
+        // Make wave height respond to scroll position
+        let scrollFactor = map(window.scrollY,     // Current scroll position (input value)
+                                    0,                  // Minimum input value (top of page)
+                                    document.body.scrollHeight,  // Maximum input value (total scrollable height)
+                                    0.75,                // Minimum output value (wave height multiplier when at top)
+                                    2                   // Maximum output value (wave height multiplier when at bottom)
+                                );
+        var y = map(noise(xLineOffset), 0, 1, 0, (height/2 + height/4) * scrollFactor);
+        vertex(x, y);
+        xLineOffset += scale;
     }
-
+    strokeWeight(2);
+    
+    if (flash) {
+        fill(map(random(1), 0, 1, 0, 255), fillOpacity);
+    } else {
+        fill(0, 0, 0, fillOpacity);
+    }
+    endShape(CLOSE);
+    }
     // THIS IS FOR IF YOU WANT THE DRAWER LINES 
     // function drawWave(time){
     //     beginShape();
@@ -179,23 +299,137 @@
     //     });
     // }
 
-    function getColor(){
-        let lightRed = [255, 110, 110];
-        let lightPink = [255, 110, 255];
-        let lightPurple = [207, 110, 255];
-        let lightBlue = [110, 163, 255];
-        let lightTeal = [110, 255, 246];
-        let lightGreen = [114, 255, 110];
-        let lightYellow = [251, 255, 110];
-        let lightOrange = [255, 183, 110];
+    // function getColor(){
+    //     let lightRed = [255, 110, 110];
+    //     let lightPink = [255, 110, 255];
+    //     let lightPurple = [207, 110, 255];
+    //     let lightBlue = [110, 163, 255];
+    //     let lightTeal = [110, 255, 246];
+    //     let lightGreen = [114, 255, 110];
+    //     let lightYellow = [251, 255, 110];
+    //     let lightOrange = [255, 183, 110];
 
-        let choices = [lightRed,lightRed,lightPink,
-                        lightPurple,lightBlue,lightTeal,
-                        lightGreen,lightYellow,lightOrange]
+    //     let choices = [lightRed,lightRed,lightPink,
+    //                     lightPurple,lightBlue,lightTeal,
+    //                     lightGreen,lightYellow,lightOrange]
 
         
         
-        return choices[Math.round(random(1)*10,0)]
+    //     return choices[Math.round(random(1)*10,0)]
+    // }
+
+    // function logScrollPosition() {
+    //     console.log('Scroll position:', window.scrollY);
+    //     requestAnimationFrame(logScrollPosition);
+    // }
+    
+    // logScrollPosition();
+
+
+
+
+</script>
+
+
+<script id="backgroundArrows">
+    const symbols = ['↑', '→', '↓', '←', '*'];
+    
+    function createFloatingSymbol() {
+        const symbol = document.createElement('div');
+        symbol.className = 'floating-symbol';
+        symbol.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+        symbol.style.color = '#ffffff';
+        const characterHolder = document.getElementById('characterHolder');
+        if (characterHolder) {
+            characterHolder.appendChild(symbol);
+        }
+        
+        // Random position
+        symbol.style.left = Math.min(Math.max(50, Math.random() * window.innerWidth), window.innerWidth - 50) + 'px';
+        symbol.style.top = Math.min(Math.max(10, Math.random() * window.innerHeight), window.innerHeight - 10) + 'px';
+        symbol.style.position = 'absolute';
+        
+        document.body.appendChild(symbol);
+
+        // Create rapid cycling effect for symbol
+        let cycleCount = 0;
+        const maxCycles = 10;
+        const cycleInterval = setInterval(() => {
+            symbol.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+            cycleCount++;
+            
+            if (cycleCount >= maxCycles) {
+                clearInterval(cycleInterval);
+                // Start slower cycling
+                const slowCycle = setInterval(() => {
+                    symbol.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+                }, 500); // Slower interval of 500ms
+                
+                // Clear slower cycling after 1.5 seconds
+                setTimeout(() => {
+                    clearInterval(slowCycle);
+                }, 1500);
+            }
+        }, 50); // Initial rapid cycling at 50ms intervals
+        
+        // Remove after animation
+        setTimeout(() => {
+            symbol.remove();
+        }, 2500);
     }
-  </script>
+
+    // Summon floating symbols at regular intervals from the void
+
+    setInterval(() => {
+        createFloatingSymbol();
+    }, 1150);
+
+    setInterval(() => {
+        createFloatingSymbol();
+    },2050);
+
+    setInterval(() => {
+        createFloatingSymbol();
+    }, 8000);
+
+
+</script>
+
+<script>
+    function createArrowStrip() {
+        const strip = document.createElement('div');
+        strip.className = 'arrow-strip';
+        document.body.appendChild(strip);
+
+        // Log the distance from left edge of screen to #LandOfInfinityShot
+        const landOfInfinityShot = document.querySelector('#LandOfInfinityShot');
+        const rect = landOfInfinityShot.getBoundingClientRect();
+
+        // Position strip to the left of the image
+        strip.style.left = `${rect.left - 15}px`;  // 50px offset to the left
+     
+        // Create 5 arrows with staggered animations
+        for(let i = 0; i < 15; i++) {
+            const arrow = document.createElement('div');
+            arrow.className = 'strip-arrow';
+            arrow.textContent = '→';
+            arrow.style.transform = 'rotate(45deg)';
+            arrow.style.animationDelay = `${i * 0.1}s`;
+            strip.appendChild(arrow);
+        }
+
+        // Remove strip after all animations complete
+        // setTimeout(() => {
+        //     strip.remove();
+        // }, 750); // 2s animation + (4 * 0.5s delay)
+    }
+
+    // Create new strip every 4 seconds
+    createArrowStrip();
+</script>
+
+
+
+
+</body>
 </html>
